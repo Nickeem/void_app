@@ -2,12 +2,22 @@ import 'constraints.dart';
 import 'package:flutter/material.dart';
 import 'package:void_app/MatchViewer.dart';
 import 'package:void_app/MatchMisc.dart';
+import 'package:flutter/services.dart';
 
 
 class MatchPage extends StatelessWidget {
   const MatchPage(this.match, {Key? key}) : super(key: key);
 
   final Match match;
+
+
+  void initState() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
